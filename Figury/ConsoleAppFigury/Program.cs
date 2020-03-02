@@ -31,7 +31,7 @@ namespace ConsoleAppFigury
             }
             catch (ArgumentOutOfRangeException)
             {
-                Console.WriteLine("Nie wolno bokom przypisywac wartoscui ujemmnych");
+                Console.WriteLine("Nie wolno bokom przypisywac wartosci ujemnych");
             }
             
             Console.WriteLine(t1);

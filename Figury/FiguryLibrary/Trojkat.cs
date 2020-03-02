@@ -104,20 +104,30 @@ namespace FiguryLibrary
         public double getPole()
         {
             var p = 0.5 * getObwod();
-            var s = Math.Sqrt(p * (p - 2) * (p - b) * (c - 2));
+            var s = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
             return s;
         }
 
-        public double Pole
+         public double Pole
+         {
+             get
+             {
+                 var p = 0.5 * Obwod;
+                 var s = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+                 return s;
+             }
+
+
+         }
+
+       /* public double Pole
         {
             get
             {
-                var p = 0.5 + Obwod;
-                var s = Math.Sqrt(p * (p - 2) * (p - b) * (c - 2));
+                var p = 0.5 * Obwod;
+                var s = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
                 return s;
             }
-
-            
-        }
+        }*/
     }
 }
