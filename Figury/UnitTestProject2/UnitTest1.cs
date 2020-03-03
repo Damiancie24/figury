@@ -89,7 +89,7 @@ namespace UnitTestProject2
 
         [DataTestMethod] 
         [DataRow(3,4,5,6)]
-        [DataRow(1,1,1,0.)]
+        [DataRow(1,1,1,0.433012701899219)]
 
         public void PropertyPole_Poprawnie(double a, double b, double c, double wynik)
         {
