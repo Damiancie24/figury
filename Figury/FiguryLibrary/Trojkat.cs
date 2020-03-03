@@ -16,9 +16,13 @@ namespace FiguryLibrary
                 {
                     throw new ArgumentOutOfRangeException("wartosc A musi byc dodatnia");
                 }
-                else
+                else if(isSpelnionyWarunekTkrojkata(value, b, c))
                 {
                     a = value;
+                }
+                else //nie jest spełniony warunek trojkata
+                {
+                    throw new ArgumentOutOfRangeException("Nie spelniony warunek trojkata przy prubie zmiany A");
                 }
                     
                     
@@ -36,11 +40,14 @@ namespace FiguryLibrary
                 {
                     throw new ArgumentOutOfRangeException("wartosc B musi byc dodatnia");
                 }
-                else
+                else if (isSpelnionyWarunekTkrojkata(a, value, c))
                 {
                     b = value;
                 }
-
+                else //nie jest spełniony warunek trojkata
+                {
+                    throw new ArgumentOutOfRangeException("Nie spelniony warunek trojkata przy prubie zmiany B");
+                }
 
             }
 
@@ -58,35 +65,60 @@ namespace FiguryLibrary
             {
                 throw new ArgumentOutOfRangeException("wartosc C musi byc dodatnia");
             }
-            else
-            {
-                c = value;
+            else if (isSpelnionyWarunekTkrojkata(a, b, value))
+                {
+                    c = value;
+                }
+                else //nie jest spełniony warunek trojkata
+                {
+                    throw new ArgumentOutOfRangeException("Nie spelniony warunek trojkata przy prubie zmiany C");
+                }
+
             }
-
-
-        }
 
     }
 
-    // konstuktory
-    public Trojkat()  //Domyslny konstruktor
+
+        private bool isSpelnionyWarunekTkrojkata(double a, double b, double c)
+        {
+            if (a + b <= c || a + c <= b || b + c <= a)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        // konstuktory
+        public Trojkat()  //Domyslny konstruktor
         {
             a = b = c = 1.0;
         }
 
+       
+
         public Trojkat(double a, double b, double c)
         {
-            if(a + b <+ c || a+c <+ b || b + c <= a)
+            if(a<= 0 || b <= 0 || c<= 0)
             {
-                throw new ArgumentOutOfRangeException("Nie spełniony warunek trojkata");
+                throw new ArgumentOutOfRangeException("boki musza byc dodatnie");
             }
 
-            this.A = a;
-            this.B = b;
-            this.C = c;
+            if (!isSpelnionyWarunekTkrojkata(a, b, c))
+            {
+                throw new ArgumentOutOfRangeException("Nie spełniony argument trujkata");
+            }
+
+            this.a = a;
+            this.b = b;
+            this.c = c;
+
+
         }
 
-        //tekstowa reprezentacja obiektu
+        //tekstowa reprezentacja obiektu (informujem jak wypisac ten obiekt )
         public override string ToString()
         {
             return $"Trojkat (a: {a}, b: {b}, c: {c}) ";
@@ -108,7 +140,7 @@ namespace FiguryLibrary
             return s;
         }
 
-         public double Pole
+         public double Pole // propertis
          {
              get
              {

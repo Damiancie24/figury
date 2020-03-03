@@ -39,8 +39,13 @@ namespace ConsoleAppFigury
 
             Console.WriteLine("===========================");
 
-            var t2 = new Trojkat(-1, 2, 1);
-            Console.WriteLine(t2);
+            var t2 = new Trojkat(3, 4, 5);
+            Console.WriteLine($"Trojkat2: {t2}");
+            Console.WriteLine(t2.A);
+            Console.WriteLine(t2.Pole);
+            Console.WriteLine(t2.Obwod);
+
+            t2.A = 100;
 
            // Console.WriteLine(t2);
             //Console.WriteLine(t3);
