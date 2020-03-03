@@ -42,7 +42,7 @@ namespace ConsoleAppFigury
             var t2 = new Trojkat(3, 4, 5);
             Console.WriteLine($"Trojkat2: {t2}");
             Console.WriteLine(t2.A);
-            Console.WriteLine(t2.Pole);
+            Console.WriteLine($"pole {t2.Pole}");
             Console.WriteLine(t2.Obwod);
 
             t2.A = 100;
