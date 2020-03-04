@@ -16,13 +16,13 @@ namespace FiguryLibrary
                 {
                     throw new ArgumentOutOfRangeException("wartosc A musi byc dodatnia");
                 }
-                else if(isSpelnionyWarunekTkrojkata(value, b, c))
+                else if(IsSpelnionyWarunekTkrojkata(value, b, c))
                 {
                     a = value;
                 }
                 else //nie jest spełniony warunek trojkata
                 {
-                    throw new ArgumentOutOfRangeException("Nie spelniony warunek trojkata przy prubie zmiany A");
+                    throw new ArgumentException("Nie spelniony warunek trojkata przy prubie zmiany A");
                 }
                     
                     
@@ -40,13 +40,13 @@ namespace FiguryLibrary
                 {
                     throw new ArgumentOutOfRangeException("wartosc B musi byc dodatnia");
                 }
-                else if (isSpelnionyWarunekTkrojkata(a, value, c))
+                else if (IsSpelnionyWarunekTkrojkata(a, value, c))
                 {
                     b = value;
                 }
                 else //nie jest spełniony warunek trojkata
                 {
-                    throw new ArgumentOutOfRangeException("Nie spelniony warunek trojkata przy prubie zmiany B");
+                    throw new ArgumentException("Nie spelniony warunek trojkata przy prubie zmiany B");
                 }
 
             }
@@ -65,13 +65,13 @@ namespace FiguryLibrary
             {
                 throw new ArgumentOutOfRangeException("wartosc C musi byc dodatnia");
             }
-            else if (isSpelnionyWarunekTkrojkata(a, b, value))
+            else if (IsSpelnionyWarunekTkrojkata(a, b, value))
                 {
                     c = value;
                 }
                 else //nie jest spełniony warunek trojkata
                 {
-                    throw new ArgumentOutOfRangeException("Nie spelniony warunek trojkata przy prubie zmiany C");
+                    throw new ArgumentException("Nie spelniony warunek trojkata przy prubie zmiany C");
                 }
 
             }
@@ -79,7 +79,7 @@ namespace FiguryLibrary
     }
 
 
-        private bool isSpelnionyWarunekTkrojkata(double a, double b, double c)
+        private bool IsSpelnionyWarunekTkrojkata(double a, double b, double c)
         {
             if (a + b <= c || a + c <= b || b + c <= a)
             {
@@ -106,7 +106,7 @@ namespace FiguryLibrary
                 throw new ArgumentOutOfRangeException("boki musza byc dodatnie");
             }
 
-            if (!isSpelnionyWarunekTkrojkata(a, b, c))
+            if (!IsSpelnionyWarunekTkrojkata(a, b, c))
             {
                 throw new ArgumentOutOfRangeException("Nie spełniony argument trujkata");
             }
@@ -126,16 +126,16 @@ namespace FiguryLibrary
 
         // Własciwosci i metody
 
-        public double getObwod() //Metoda zwracajaca obwod trojkata
+        public double GetObwod() //Metoda zwracajaca obwod trojkata
         {
             return a + b + c;
         }
 
         public double Obwod => a + b + c;  //propertys zwracajaca obwod tego trojkata
 
-        public double getPole()
+        public double GetPole()
         {
-            var p = 0.5 * getObwod();
+            var p = 0.5 * GetObwod();
             var s = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
             return s;
         }

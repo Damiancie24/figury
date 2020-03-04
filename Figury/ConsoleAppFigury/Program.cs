@@ -20,9 +20,9 @@ namespace ConsoleAppFigury
             var t3 = new Trojkat(c: 1, b: 2, a: 2);
 
             Console.WriteLine(t1);
-            Console.WriteLine(t1.getObwod());
+            Console.WriteLine(t1.GetObwod());
             Console.WriteLine(t1.Obwod);
-            Console.WriteLine($"pole = {t1.getPole()}");
+            Console.WriteLine($"pole = {t1.GetPole()}");
             Console.WriteLine($"Pole = {t1.Pole}");
 
             try
