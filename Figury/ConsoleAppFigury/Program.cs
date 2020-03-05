@@ -12,12 +12,7 @@ namespace ConsoleAppFigury
         static void Main(string[] args)
         {
             Trojkat t1; // deklaracja zmiennej typu trojkat
-
             t1 = new Trojkat();
-
-           // Trojkat t2 = new Trojkat(1, 2, 3);
-
-            var t3 = new Trojkat(c: 1, b: 2, a: 2);
 
             Console.WriteLine(t1);
             Console.WriteLine(t1.GetObwod());
@@ -28,29 +23,33 @@ namespace ConsoleAppFigury
             try
             {
                 t1.A = -1;
+                t1.B = -2;
+                t1.C = -3;
             }
             catch (ArgumentOutOfRangeException)
             {
                 Console.WriteLine("Nie wolno bokom przypisywac wartosci ujemnych");
             }
-            
             Console.WriteLine(t1);
             Console.WriteLine(t1.Pole);
 
-            Console.WriteLine("===========================");
-
+            Console.WriteLine("===========Trojkat 2================");
             var t2 = new Trojkat(3, 4, 5);
             Console.WriteLine($"Trojkat2: {t2}");
             Console.WriteLine(t2.A);
-            Console.WriteLine($"pole {t2.Pole}");
-            Console.WriteLine(t2.Obwod);
 
-            t2.A = 100;
+            t2. B = 100;
 
-           // Console.WriteLine(t2);
+            Console.WriteLine(t2);
+
+            // Console.WriteLine(t2);
             //Console.WriteLine(t3);
+            // Trojkat t2 = new Trojkat(1, 2, 3);
+            //Console.WriteLine($"pole {t2.Pole}");
+            //Console.WriteLine(t2.Obwod);
+            //var t3 = new Trojkat(c: 1, b: 2, a: 2);
 
-            
+
         }
     }
 }

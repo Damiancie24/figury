@@ -5,7 +5,6 @@ using FiguryLibrary;
 namespace UnitTestProject2
 {
     [TestClass]
-   
 
     public class UnitTest1
     {
@@ -16,16 +15,12 @@ namespace UnitTestProject2
         public void ConstruktorPoprawneDaneTrojkatUtwozony(double a, double b, double c)
         {
             //AAA
-
             //Arrange
-            
 
             //Act
             Trojkat t = new Trojkat(a, b, c);
 
-
             //Assert
-
             Assert.AreEqual(a, t.A);
             Assert.AreEqual(b, t.B);
             Assert.AreEqual(c, t.C);
@@ -40,37 +35,33 @@ namespace UnitTestProject2
             //Act
             Trojkat t = new Trojkat();
 
-
             //Assert
-
-
             Assert.AreEqual(1, t.A);
             Assert.AreEqual(1, t.B);
             Assert.AreEqual(1, t.C);
         }
 
-        [DataTestMethod]
+       /* [DataTestMethod]
         [DataRow(-1,1,1)]
         [DataRow(1,-1,1)]
         [DataRow(1,1,-1)]
-        [DataRow(-1,-1,-1)]
         [ExpectedException(typeof(ArgumentOutOfRangeException))]
-       public void ConstructorUjemnyParametr_ArgumentOutOfRangeExeption(double a, double b, double c)
+       /*public void ConstructorUjemnyParametr_ArgumentOutOfRangeExeption(double a, double b, double c)
         {
             Trojkat t = new Trojkat(a, b, c);
-        } 
+        } */
         
-        [DataTestMethod]
+       /* [DataTestMethod]
         [DataRow(1,1,100)]
         [DataRow(100,1,1)]
         [DataRow(1,100,1)]
         [ExpectedException(typeof(ArgumentException))]
 
-        public void ConstructorNieSpelnionyWarunekTrojkata(double a, double b, double c)
+       /* public void ConstructorNieSpelnionyWarunekTrojkata_ArgumentExeption(double a, double b, double c)
         {
             Trojkat t = new Trojkat(a, b, c);
 
-        }
+        }*/
 
         [DataTestMethod]
         [DataRow(1,1,1,3)]
